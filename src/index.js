@@ -1,17 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDom from 'react-dom'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const TarjetaFruta = (props) => (
+  <div>
+    <h3> { props.name } </h3>
+    <hr/>
+    <p>$ {props.price } </p>
+  </div>
+)
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const App = () => (
+  <div>
+  
+    <TarjetaFruta name='Sandia' price={1.560} ></TarjetaFruta>
+    <TarjetaFruta name='Melon' price={1.990}></TarjetaFruta>
+    <TarjetaFruta name='Guacamole' price={2.560}></TarjetaFruta>
+  </div>
+)
+
+ReactDom.render(<App />, document.getElementById('root'));
